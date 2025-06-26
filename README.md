@@ -1,4 +1,4 @@
-# Banco de Dados - Curso Superior de Tecnologia em Redes de Computadores
+## Banco de Dados - Curso Superior de Tecnologia em Redes de Computadores
 
 Sejam bem-vindos ao repositório da disciplina TEC.0022 - Banco de Dados. Aqui, vocês encontrarão todo o material necessário para acompanhar as aulas, realizar as atividades práticas e desenvolver competências fundamentais na área de bancos de dados.
 
