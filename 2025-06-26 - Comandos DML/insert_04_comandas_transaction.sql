@@ -1,3 +1,7 @@
+-- OBSERVAÇÃO: Será necessário alterar o tipo dos campos "data_abertura" e
+-- "data_fechamento" para TIMESTAMP na tabela "comandas" antes de executar
+-- esse script
+
 DO
 $$
 DECLARE
