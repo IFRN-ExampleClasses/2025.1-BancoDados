@@ -9,7 +9,7 @@ DECLARE
     v_sqlerrm TEXT;
 BEGIN
 	-- Lê o conteúdo do arquivo JSON na máquina onde o Postgres roda
-   garcons_json := pg_read_file('C:/Users/charl/OneDrive - IFRN/(IFRN) DIATINF/(2025.1) Aulas/TEC.0022 - Banco de Dados (NCT)/2025.1-BancoDados/2025-06-26 - Comandos DML/dados_garcons.json')::jsonb;
+   garcons_json := pg_read_file('C://Users//charl//OneDrive - IFRN//(IFRN) DIATINF//(2025.1) Aulas//TEC.0022 - Banco de Dados (NCT)//2025.1-BancoDados//2025-06-26 - Comandos DML//dados_garcons.json')::jsonb;
 
    total := jsonb_array_length(garcons_json);
 
