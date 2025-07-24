@@ -16,10 +16,10 @@
 
    FROM barzinho.itens_comandas
    
-   JOIN barzinho.produtos            WHERE itens_comandas.id_produto = produtos.id_produto
-   JOIN barzinho.categorias_produtos WHERE produtos.id_categoria = categorias_produtos.id_categoria
-   JOIN barzinho.comandas            WHERE itens_comandas.id_comanda = comandas.id_comanda
-   JOIN barzinho.garcons             WHERE comandas.cpf_garcom = garcons.cpf_garcom
+   JOIN barzinho.produtos            ON itens_comandas.id_produto = produtos.id_produto
+   JOIN barzinho.categorias_produtos ON produtos.id_categoria = categorias_produtos.id_categoria
+   JOIN barzinho.comandas            ON itens_comandas.id_comanda = comandas.id_comanda
+   JOIN barzinho.garcons             ON comandas.cpf_garcom = garcons.cpf_garcom
 
   WHERE comandas.data_abertura BETWEEN '2025-06-08 18:00:00' AND '2025-06-09 02:00:00';
 	
