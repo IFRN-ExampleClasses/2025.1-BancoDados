@@ -21,12 +21,13 @@ create table barzinho.garcons(
 create table barzinho.produtos(
 	id_produto		serial,
 	nome_produto	varchar(80),
-	preco_unitario	money,
+	preco_unitario	numeric,
 	id_categoria	integer,
 	
 	constraint pk_produtos primary key (id_produto),
 	constraint fk_produtos_categorias_produtos foreign key (id_categoria)
-		references barzinho.categorias_produtos (id_categoria)
+		references barzinho.categorias_produtos (id_categoria),
+	constraint chk_produtos_preco_unitario check (preco_unitario >= 0)
 );
 
 -- Criando a tabela COMANDAS
@@ -49,7 +50,7 @@ create table barzinho.itens_comandas(
 	id_comanda			integer,
 	id_produto			integer,
 	quantidade			integer,
-	preco_unitario		money,
+	preco_unitario		numeric,
 	
 	constraint pk_itens_comandas primary key (id_item_comanda),
 	constraint fk_items_comandas_produtos foreign key (id_produto)
