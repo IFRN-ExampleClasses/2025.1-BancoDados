@@ -3,24 +3,26 @@ from classesAPP.ExcecoesAPP import *
 from classesMODEL import Garcom
 from classesDAO import GarcomDAO
 
+# ----------------------------------------------------------------------
+# Função principal
 def main():
-    conexao = ConexaoBD(user='seu_usuario', password='sua_senha')
-    dao = GarcomDAO(conexao)
+    connDB = ConexaoBD(user='seu_usuario', password='sua_senha')
+    daoGarcom = GarcomDAO(connDB)
 
     try:
-        garcom = Garcom(cpf_garcom='12345678901', nome_garcom='João Silva')
-        dao.inserir(garcom)
+        objGacom = Garcom(cpf_garcom='12345678901', nome_garcom='João Silva')
+        daoGarcom.inserir(objGacom)
         print('Garçom inserido.')
 
-        lista = dao.listar()
+        lista = daoGarcom.listar()
         for g in lista:
             print(f'{g.get_cpf_garcom()} - {g.get_nome_garcom()}')
 
-        garcom.set_nome_garcom('João Silva Alterado')
-        dao.alterar(garcom)
+        objGacom.set_nome_garcom('João Silva Alterado')
+        daoGarcom.alterar(objGacom)
         print('Garçom alterado.')
 
-        dao.excluir(garcom.get_cpf_garcom())
+        daoGarcom.excluir(objGacom.get_cpf_garcom())
         print('Garçom excluído.')
 
     except (ErroInsercao, ErroAlteracao, ErroExclusao, ErroListagem, ErroConexao) as e:
